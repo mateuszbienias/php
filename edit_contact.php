@@ -42,6 +42,7 @@ $result = mysqli_query($conn, $sql);
 
 			<form action="update_contact.php" method="post">
 			<?php
+			// dlaczego poniżej używasz pętli while?
 			if (mysqli_num_rows($result) > 0) {
 				while($contact = mysqli_fetch_assoc($result)) {
 			?>
