@@ -29,6 +29,7 @@ $contact_group = mysqli_real_escape_string($conn, $_REQUEST['contact_group']);
 $notes = mysqli_real_escape_string($conn, $_REQUEST['notes']);
 
 // Attempt insert query execution
+// Czy to działa? w valuse jest '$first_name' zmienna w pojedynczych ciapkach, w ten sposób zmienna raczej nie bedzie podstawiona
 $sql = "INSERT INTO contacts (first_name, last_name, email, phone, address1, address2, city, zipcode, contact_group, notes) 
 VALUES ('$first_name', '$last_name', '$email', '$phone', '$address1', '$address2', '$city', '$zipcode', '$contact_group', '$notes')";
 if(mysqli_query($conn, $sql)){
