@@ -6,7 +6,7 @@ $dbname = 'addressbook';
 $username = 'root';
 $password = '';
 
-
+// chyba zapomniany var_dump
 var_dump($_POST);
 
 // Create connection
