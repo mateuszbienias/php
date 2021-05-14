@@ -12,7 +12,8 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-
+// w takich miejsca warto zwalidować czy id  jest faktycznie tym czego się spodziewamy. w tym wypadkuy integerem
+// w innych miejscach użyłeś więc zakładam, że tu zapomniałeś o mysqli_real_escape_string :) 
 $id = $_REQUEST['id'];
 
 // Attempt insert query execution
