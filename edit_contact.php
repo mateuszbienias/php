@@ -5,6 +5,7 @@ $dbname = 'addressbook';
 $username = 'root';
 $password = '';
 
+//tak jak w delete walidacja i mysqli_real_escape_string
 $id = $_POST['id'];
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
