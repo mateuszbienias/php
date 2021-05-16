@@ -13,6 +13,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
+// Check id
 if (is_int((int)$_REQUEST['id']) == True) {
 	$id =  mysqli_real_escape_string($conn, $_REQUEST['id']);
 } else{
