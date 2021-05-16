@@ -7,8 +7,6 @@ $username = 'root';
 $password = '';
 
 
-var_dump($_POST);
-
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -39,4 +37,3 @@ if(mysqli_query($conn, $sql)){
  
 // Close connection
 mysqli_close($conn);
-?>

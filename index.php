@@ -54,8 +54,8 @@ $result = mysqli_query($conn, $sql);
 										</thead>
 										<tbody>
 										<?php 
-										if (mysqli_num_rows($result) > 0) {
-											while($contact = mysqli_fetch_assoc($result)) {
+										if ($result) {
+											foreach($result as $contact) {
 										?>
 											<tr>
 												<td><a href="#"><?php echo $contact["first_name"] ." ". $contact["last_name"]; ?></a></td>

@@ -5,12 +5,17 @@ $dbname = 'addressbook';
 $username = 'root';
 $password = '';
 
-$id = $_POST['id'];
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
+}
+
+if (is_int((int)$_POST['id']) == True) {
+	$id =  mysqli_real_escape_string($conn, $_POST['id']);
+} else{
+	echo "ID is not a num";
 }
 
 $sql = "SELECT * FROM contacts WHERE id='$id'";
@@ -30,7 +35,7 @@ $result = mysqli_query($conn, $sql);
 			<nav id="LINKI">
 			<!--LINKI-->
 				<ul>
-				<li><a href="test.php">Książka Adresowa</a></li>
+				<li><a href="index.php">Książka Adresowa</a></li>
 				<li><a href="add_kart.html">Dodaj kartę</a></li>
 				</ul>
 			<!--/LINKI-->
@@ -41,8 +46,8 @@ $result = mysqli_query($conn, $sql);
 
 			<form action="update_contact.php" method="post">
 			<?php
-			if (mysqli_num_rows($result) > 0) {
-				while($contact = mysqli_fetch_assoc($result)) {
+			if ($result) {
+				foreach($result as $contact) {
 			?>
 				<div>	
 					<div>
