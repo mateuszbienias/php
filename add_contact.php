@@ -6,11 +6,6 @@ $dbname = 'addressbook';
 $username = 'root';
 $password = '';
 
-<<<<<<< HEAD
-=======
-// chyba zapomniany var_dump
-var_dump($_POST);
->>>>>>> 0ead1154cf6aa600993aa0e9c378c3212b22f49d
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -42,9 +37,4 @@ if(mysqli_query($conn, $sql)){
 }
  
 // Close connection
-<<<<<<< HEAD
 mysqli_close($conn);
-=======
-mysqli_close($conn);
-?>
->>>>>>> 0ead1154cf6aa600993aa0e9c378c3212b22f49d
