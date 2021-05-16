@@ -5,6 +5,11 @@ $dbname = 'addressbook';
 $username = 'root';
 $password = '';
 
+<<<<<<< HEAD
+=======
+//tak jak w delete walidacja i mysqli_real_escape_string
+$id = $_POST['id'];
+>>>>>>> 0ead1154cf6aa600993aa0e9c378c3212b22f49d
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
@@ -46,8 +51,14 @@ $result = mysqli_query($conn, $sql);
 
 			<form action="update_contact.php" method="post">
 			<?php
+<<<<<<< HEAD
 			if ($result) {
 				foreach($result as $contact) {
+=======
+			// dlaczego poniżej używasz pętli while?
+			if (mysqli_num_rows($result) > 0) {
+				while($contact = mysqli_fetch_assoc($result)) {
+>>>>>>> 0ead1154cf6aa600993aa0e9c378c3212b22f49d
 			?>
 				<div>	
 					<div>
